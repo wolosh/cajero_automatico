@@ -26,12 +26,14 @@ class clientes{
       return `${this.nombre}, no tienes suficiente saldo para retirar ${monto}. Tu saldo actual es de ${this.saldo}`;
     } else {
       this.saldo -= monto;
+      document.getElementById("render").innerHTML= `${this.nombre}, has retidado ${monto}. Tu saldo actual es de ${this.saldo}`
       return `${this.nombre}, has retirado ${monto}. Tu saldo actual es de ${this.saldo}`;
     }
 }
   depositar(monto) {
     if (monto > 0) {
       this.saldo += monto;
+      document.getElementById("render").innerHTML= `${this.nombre}, acabas de depositar ${monto}. Tu saldo actual es de ${this.saldo}`
       return `${this.nombre}, has depositado ${monto}. Tu saldo actual es de ${this.saldo}`;
     } else {
       return `${this.nombre}, no insertaste dinero tu saldo actual es de ${this.saldo}`;
